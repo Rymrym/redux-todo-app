@@ -12,3 +12,15 @@ export const updateTask = (task)=>{
     payload : task
     })
 }
+export const SEARCH_DONE = 'SEARCH_DONE'
+export const searchDone = ()=>{
+    return ({
+    type : SEARCH_DONE
+    })
+}
+export const SEARCH_UNDONE = 'SEARCH_UNDONE'
+export const searchUndone = ()=>{
+    return ({
+    type : SEARCH_UNDONE
+    })
+}

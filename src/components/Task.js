@@ -11,6 +11,7 @@ const Task = (props)=> {
     const [inputValue, setInputValue]= useState(props.description)
     const [check, setCheck]= useState(false)
     let dispatch = useDispatch();
+    console.log(props)
     const style = {
         height : "200", 
         width : "280", 
@@ -28,7 +29,7 @@ setInputValue(e.target.value)
     }
 
     const handleCheckBox = (e) =>{
-        setCheck(e.target.value)
+        setCheck(!check)
             }
          
 
@@ -45,7 +46,7 @@ setInputValue(e.target.value)
         <div style ={{margin : 70, height : "300", width : "200"}}>
         <Input placeholder={props.description} onChange = {handleChange}/><br/>
         <Input  type = "checkbox" onChange = {handleCheckBox}/><br/>
-        <Button color ="dark" onClick = {()=>{dispatch(updateTask(updatedTask))
+        <Button color ="dark" type="button" onClick = {()=>{dispatch(updateTask({id : props.id , description : inputValue , isDone : true}))
         setModalState(false)}}>Edit</Button>
         </div>
         </Modal> 
